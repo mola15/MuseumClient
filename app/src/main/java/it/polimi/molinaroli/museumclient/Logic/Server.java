@@ -169,7 +169,6 @@ public class Server {
                                     if (i.getAction().equals(Intent.ACTION_MEDIA_BUTTON)){
 
                                         int code = i.getIntExtra("android.intent.extra.KEY_EVENT_CODE",0);
-                                        new KeyEvent(KeyEvent.ACTION_DOWN, code).dispatch(null);
                                         i.putExtra(Intent.EXTRA_KEY_EVENT,new KeyEvent(KeyEvent.ACTION_DOWN, code));
                                         context.sendOrderedBroadcast(i, null);
                                         Log.e("server","broadcast lanciato");
